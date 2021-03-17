@@ -103,6 +103,7 @@ open class FPNTextField: UITextField {
 
 		setupFlagButton()
 		setupPhoneCodeTextField()
+        setupDropDownImageView()
 		setupLeftView()
 
 		keyboardType = .numberPad
