@@ -10,13 +10,6 @@ import UIKit
 
 open class FPNCountryListViewController: UITableViewController, UISearchResultsUpdating, UISearchControllerDelegate {
 
-    lazy var closeButton: UIBarButtonItem = {
-        UIBarButtonItem(image: UIImage(named: "close"),
-                        style: .plain,
-                        target: self,
-                        action: #selector(closeList))
-    }()
-
 	open var repository: FPNCountryRepository?
 	open var showCountryPhoneCode: Bool = true
 	open var searchController: UISearchController = UISearchController(searchResultsController: nil)
@@ -28,8 +21,6 @@ open class FPNCountryListViewController: UITableViewController, UISearchResultsU
 		super.viewDidLoad()
 
 		tableView.tableFooterView = UIView()
-
-        navigationItem.leftBarButtonItem = closeButton
 		initSearchBarController()
 	}
 
@@ -142,8 +133,4 @@ open class FPNCountryListViewController: UITableViewController, UISearchResultsU
 	open func willDismissSearchController(_ searchController: UISearchController) {
 		results?.removeAll()
 	}
-
-    @objc func closeList() {
-        dismiss(animated: true, completion: nil)
-    }
 }
